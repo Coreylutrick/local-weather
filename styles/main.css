@@ -1,3 +1,28 @@
 body {
-  background-color: brown;
+  background-image: url("https://images.unsplash.com/photo-1435914149323-1b656e7ab379?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=15aa18985e9339cb5c3e0783d9a5c11e&auto=format&fit=crop&w=1050&q=80");
+}
+
+#weatherCard {
+  box-shadow: 0 0 20px white inset;
+  border-radius: 10px;
+}
+
+p {
+  color: white
+}
+
+h2 {
+  color: white
+}
+
+#fiveDay {
+  margin: 15px;
+}
+
+#search {
+  margin-bottom: 20px;
+}
+
+h1 {
+  color: white;
 }

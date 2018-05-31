@@ -9,17 +9,20 @@
   <link rel="stylesheet" href="/styles/main.css">
 </head>
 <body class='text-center'>
-    <div id='search'>
-        <h1>Search</h1>
-        <div class="text-center" id="search">
-          <div class="input-group input-group-lg col-xs-6 col-xs-offset-3">
-            <span class="input-group-addon glyphicon glyphicon-search" aria-hidden="true"></span>
-            <input type="text" class="form-control" placeholder="Zipcode" id="searchBar">
-          </div>
-          <button id='submit'>Submit</button>
+  <div class='container-fluid'>
+    <div class='row' id='search'>
+      <h1>Search</h1>
+      <div class="text-center" id="search">
+        <div class="input-group input-group-lg col-xs-6 col-xs-offset-3">
+          <input type="text" class="form-control" placeholder="Zipcode" id="searchBar">
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button" id="submit">Submit</button>
+          </span>
         </div>
-        <div id='weather'></div>
       </div>
+    </div>
+    <div class='row' id='weather'></div>
+  </div>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src='./dist/app.js'></script>
