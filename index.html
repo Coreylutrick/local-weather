@@ -8,23 +8,100 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="/styles/main.css">
 </head>
-<body class='text-center'>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Local Weather</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#" id='auth'>Authenticate</a></li>
+          <li><a href="#" id='movie' class='hide'>My Forecasts</a></li>
+          <li><a href="#" id='srch' class='hide'>Search</a></li>
+          <li><a href="#" id='logout' class='hide'>Log Out</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
   <div class='container-fluid'>
-    <div class='row' id='search'>
-      <h1>Search</h1>
+    <div class='row hide' id='search'>
+      <h1 class='text-center'>What's It Like Out There</h1>
       <div class="text-center" id="search">
         <div class="input-group input-group-lg col-xs-6 col-xs-offset-3">
           <input type="text" class="form-control" placeholder="Zipcode" id="searchBar">
           <span class="input-group-btn">
-            <button class="btn btn-default" type="button" id="submit">Submit</button>
+            <button class="btn btn-default" type="button" id="submit"><span class="glyphicon glyphicon-search"></span> Search</button>
           </span>
         </div>
       </div>
     </div>
     <div class='row' id='weather'></div>
-  </div>
+    <div id="authScreen">
+      <div id="login-form">
+        <h1 class="text-center">Sign In</h1>
+        <form class="form-horizontal col-sm-4 col-sm-offset-4 col-xs-8 col-xs-offset-2">
+          <div class="form-group">
+            <label for="inputEmail" class="col-sm-2 control-label log-in logLabel">Email</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputPassword" class="col-sm-2 control-label logLabel">Password</label>
+            <div class="col-sm-10">
+              <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <a href="#" id="registerLink" class="logLabel">Need to Register?</a>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" id="signin-btn" class="btn btn-default">Sign in</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div id="registration-form" class="hide">
+        <h1 class="text-center">Registration</h1>
+        <form class="form-horizontal col-sm-4 col-sm-offset-4 col-xs-8 col-xs-offset-2">
+          <div class="form-group">
+            <label for="registerEmail" class="col-sm-2 control-label logLabel">Email</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" id="registerEmail" placeholder="Email">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="registerPassword" class="col-sm-2 control-label logLabel">Password</label>
+            <div class="col-sm-10">
+              <input type="password" class="form-control" id="registerPassword" placeholder="Password">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <a href="#" id="signin-link" class="logLabel">Go to Login</a>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" id="register-btn" class="btn btn-default">Register</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
   <script src='./dist/app.js'></script>
 </body>
 </html>
